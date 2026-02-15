@@ -1,5 +1,7 @@
 # Kasner Keyboard Layout
 
+![Version: 3.0](https://img.shields.io/badge/Version-3.0-blue)
+
 Kasner is a unified, polyglot-first keyboard layout designed for programmers and writers who work extensively with multiple languages (English, Russian, Ukrainian).
 
 It solves the fundamental problem of standard layouts: inconsistent symbol placement.
@@ -24,33 +26,31 @@ The Kasner layout is built on the principle of **Symbol Unification**. Regardles
 
 - **Dvorak-Based English:** The English layer is based on Dvorak to maximize ergonomic efficiency and hand alternation.
 
-- **Unified Symbols:** The symbol keys defined in the English layer are "locked" in place. The Cyrillic (RU/UA/BY) and German layers are built around these fixed symbols.
+- **Unified Symbols:** The symbol keys defined in the English layer are "locked" in place. The Cyrillic (RU/UA) and other layers are built around these fixed symbols.
 
-- **Polyglot Optimized:** Designed specifically for users switching between EN, RU, UA, BY, and DE daily.
+- **Polyglot Optimized:** Designed specifically for users switching between EN, RU, and UA daily.
 
 ## The Layout
 
 This is the foundational map. All other language variations respect the symbol placement defined here.
 
-### Visual Map of Layouts
+### ANSI 104
 
-#### ANSI 104
-
-> English - EN/US
+English - EN/US
 
 ![English ANSI Layout](./Visualizations/keyboard-layout-editor/Kasner-En-Us-104-ANSI/kasner-en(us)-2026.png)
 
-> Russian - RU/RU
+Russian - RU/RU
 
 ![Russian ANSI Layout](./Visualizations/keyboard-layout-editor/Kasner-Ru-Ru-104-ANSI/kasner-ru(ru)-2026.png)
 
-> Ukrainian - UK/UA
+Ukrainian - UK/UA
 
 ![Ukrainian ANSI Layout](./Visualizations/keyboard-layout-editor/Kasner-Uk-Ua-104-ANSI/kasner-uk(ua)-2026.png)
 
-#### Alice
+### Alice
 
-> English EN/US - Keychron Q14 Max
+English EN/US - Keychron Q14 Max
 
 ![English Alice Layout](./Visualizations/keyboard-layout-editor/Kasner-En-Us-Keychron-Q14/kasner-en(us)-alice-keychron-q14.png)
 
@@ -74,10 +74,16 @@ Full support via XKB (X11 & Wayland).
 
 ### Windows
 
-- **Setup:** 🚧 *To be done*
+- **Setup:** *To be done*
 
 - **Supported:**  via Microsoft Keyboard Layout Creator (MSKLC).
 
-## License
+---
 
-Distributed under the `MIT License`. See `LICENSE` for more information.
+Roman Kasner © 2011 - 2026  
+
+### License
+
+Distributed under the **MIT License**. See [LICENSE](./LICENSE) for more information.
+
+*` This document and other documents in this project were created using AI. `*
