@@ -32,11 +32,24 @@ The Kasner layout is built on the principle of **Symbol Unification**. Regardles
 
 This is the foundational map. All other language variations respect the symbol placement defined here.
 
-### Visual Map
+### Visual Map of Layouts
 
-> English ANSI 104 Layout
+#### ANSI 104
 
-![English ANSI Layout](Layouts/English/kasner-en(us)-2026.png)
+> English - EN/US
+
+![English ANSI Layout](./Visualizations/keyboard-layout-editor/Kasner-En-Us-104-ANSI/kasner-en(us)-2026.png)
+
+> Russian - RU/RU
+
+![Russian ANSI Layout](./Visualizations/keyboard-layout-editor/Kasner-Ru-Ru-104-ANSI/kasner-ru(ru)-2026.png)
+
+#### Alice
+
+> English EN/US - Keychron Q14 Max
+
+![Russian Alice Layout](./Visualizations/keyboard-layout-editor/Kasner-En-Us-Keychron-Q14/kasner-en(us)-alice-keychron-q14.png)
+
 
 ## Installation
 
@@ -46,15 +59,15 @@ Choose your operating system to view specific installation instructions:
 
 Full support via XKB (X11 & Wayland).
 
-- **Setup:** [Installation Guide for Linux](Layouts/English/Linux/Xkb/ReadMe.md)
+- **Setup:** [Installation Guide for Linux](./OperationSystems/Linux/Gnome_Xkb/ReadMe.md)
 
 - **Supported:** Fedora, Ubuntu, Arch, Debian, and others.
 
 ### macOS
 
-- **Setup:** 🚧 *To be done*
+- **Setup:** [Installation Guide for macOs](./OperationSystems/macOS/ReadMe.md)
 
-- **Supported:** via `.keylayout` and Karabiner-Elements.
+- **Supported:** via `.bundle` with `.keylayout` and Karabiner-Elements.
 
 ### Windows
 
