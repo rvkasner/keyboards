@@ -20,64 +20,7 @@ You can install this layout manually or use the provided shell commands for a qu
 
 - Desktop Environment: GNOME, KDE Plasma, XFCE, or a Window Manager (i3, Sway).
 
-### Option 1: Quick Install (Bash Script)
-
-Run the following script in your terminal from this directory. It handles file copying, creates a backup of your configuration, and registers the layout automatically.
-
-```bash
-#!/bin/bash
-
-LAYOUT_NAME="kasner"
-SYMBOLS_FILE="./kasner"
-XKB_PATH="/usr/share/X11/xkb"
-RULES_XML="$XKB_PATH/rules/evdev.xml"
-
-# 1. Install the symbol file
-echo "Installing symbol file..."
-if [ ! -f "$SYMBOLS_FILE" ]; then
-    echo "Error: File '$SYMBOLS_FILE' not found in current directory."
-    exit 1
-fi
-sudo cp "$SYMBOLS_FILE" "$XKB_PATH/symbols/$LAYOUT_NAME"
-sudo chmod 644 "$XKB_PATH/symbols/$LAYOUT_NAME"
-
-# 2. Register layout in evdev.xml (if not already present)
-# This step allows the Desktop Environment to "see" the layout in the Settings menu.
-if grep -q "<name>$LAYOUT_NAME</name>" "$RULES_XML"; then
-    echo "Layout already registered in evdev.xml."
-else
-    echo "Registering layout in evdev.xml..."
-    
-    # Backup the original file to prevent data loss
-    sudo cp "$RULES_XML" "$RULES_XML.bak.$(date +%F_%T)"
-    
-    # XML snippet to insert
-    XML_BLOCK="
-    <layout>
-      <configItem>
-        <name>$LAYOUT_NAME</name>
-        <shortDescription>kas</shortDescription>
-        <description>English (Kasner)</description>
-        <languageList>
-          <iso639Id>eng</iso639Id>
-        </languageList>
-      </configItem>
-    </layout>"
-    
-    # Insert before the closing </layoutList> tag
-    # Note: This uses a temporary file to safely edit XML via sed
-    sudo sed -i "s|</layoutList>|$XML_BLOCK\n  </layoutList>|" "$RULES_XML"
-fi
-
-# 3. Clear XKB cache (for Fedora/RedHat based systems and others)
-# XKB caches compiled keymaps; this forces a rebuild on the next load.
-echo "Clearing XKB cache..."
-sudo rm -rf /var/lib/xkb/*.xkm
-
-echo "Done! Please restart your session or reboot to apply changes."
-```
-
-### Option 2: Manual Installation
+### Manual Installation
 
 If you prefer to understand every change made to your system or need to debug the installation:
 
@@ -122,7 +65,28 @@ If you prefer to understand every change made to your system or need to debug th
     sudo rm -rf /var/lib/xkb/*.xkm
     ```
 
-5. **Please restart your session or reboot to apply changes.**
+
+5. **(Optional) Ubuntu: Editing the `evdev.lst` File** (Additional Step if needed)
+
+    Although GNOME primarily relies on `.xml` files, some system components still reference the `.lst` file. If the layout is still not appearing in the settings, you should register it here as well.
+    
+    5.1. Open the file for editing:
+    
+    ```bash
+    sudo nano /usr/share/X11/xkb/rules/evdev.lst
+    ```
+    
+    5.2. Locate the section starting with `! layout`.
+    
+    5.3. Add a new line at the end of this section (following the format: `filename description`):
+    
+    ```text
+    kasner         Kasner (English)
+    ```
+    
+    5.4. Save the file.
+
+6. **Please restart your session or reboot to apply changes.**
 
 ## ⚙️ Activation
 
