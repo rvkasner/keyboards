@@ -8,6 +8,7 @@ The repository provides a **macOS Keyboard Bundle** (`.bundle`) containing the f
 
 - **Kasner En**: Custom English layout.
 - **Kasner Ru**: Custom Russian layout.
+- **Kasner Uk**: Custom Ukrainian layout.
 
 Both layouts feature custom icons in `.icns` format to ensure seamless integration with the macOS menu bar.
 
