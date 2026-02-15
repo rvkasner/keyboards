@@ -16,7 +16,7 @@ For a polyglot developer, standard layouts (QWERTY/ЙЦУКЕН) are inefficient
 
 ## The Solution
 
-### One muscle memory for all languages.
+### One muscle memory for all languages
 
 The Kasner layout is built on the principle of **Symbol Unification**. Regardless of whether you are typing code in Python, documentation in English, or a message in Ukrainian, **all punctuation and syntax symbols remain in the exact same physical location**.
 
