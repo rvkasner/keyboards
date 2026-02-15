@@ -30,5 +30,16 @@
 		<key>TISIntendedLanguage</key>
 		<string>ru</string>
 	</dict>
+	<key>KLInfo_Kasner Uk</key>
+	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<false/>
+		<key>TISIconIsTemplate</key>
+		<false/>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.unsavedukeleledocument.kasneruk</string>
+		<key>TISIntendedLanguage</key>
+		<string>uk</string>
+	</dict>
 </dict>
 </plist>

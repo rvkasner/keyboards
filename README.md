@@ -1,6 +1,6 @@
 # Kasner Keyboard Layout
 
-Kasner is a unified, polyglot-first keyboard layout designed for programmers and writers who work extensively with multiple languages (English, Russian, Ukrainian, Belarusian, German).
+Kasner is a unified, polyglot-first keyboard layout designed for programmers and writers who work extensively with multiple languages (English, Russian, Ukrainian).
 
 It solves the fundamental problem of standard layouts: inconsistent symbol placement.
 
