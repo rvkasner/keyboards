@@ -56,7 +56,7 @@ xkb_symbols "kasner" {
     // Row 3 - Top level letters
     // ============================================================
     
-    key <TAB>  { [ Tab, ISO_Left_Tab ] };                   // Tab Left Tab
+    // key <TAB>  { [ Tab, ISO_Left_Tab ] };                   // Tab Left Tab
 
     key <AD01> { [ underscore, numbersign ] };              // _ #
     key <AD02> { [ braceleft, less ] };                     // { <
@@ -76,7 +76,7 @@ xkb_symbols "kasner" {
     // Row 4 - Middle level letters
     // ============================================================
     
-    key <CAPS> { [ BackSpace, CapsLock ] };                // Backspace instead of Caps Lock
+    // key <CAPS> { [ BackSpace, CapsLock ] };                // Backspace instead of Caps Lock
 
     key <AC01> { [ a, A ] };
     key <AC02> { [ o, O ] };
