@@ -24,11 +24,6 @@ if ! command -v wget >/dev/null 2>&1; then
     exit 1
 fi
 
-if ! command -v console-setup >/dev/null 2>&1; then
-    echo "Error: console-setup is not installed."
-    exit 1
-fi
-
 echo "Downloading pre-compiled KMAP file..."
 
 mkdir -p /etc/console-setup
