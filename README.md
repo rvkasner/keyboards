@@ -40,21 +40,21 @@ This is the foundational map. All other language variations respect the symbol p
 
 English - EN/US
 
-![English ANSI Layout](./visualizations/keyboard-layout-editor/Kasner-En-Us-104-ANSI/kasner-en(us)-2026.png)
+![English ANSI Layout](./visual/keyboard-layout-editor/Kasner-En-Us-104-ANSI/kasner-en(us)-2026.png)
 
 Russian - RU/RU
 
-![Russian ANSI Layout](./visualizations/keyboard-layout-editor/Kasner-Ru-Ru-104-ANSI/kasner-ru(ru)-2026.png)
+![Russian ANSI Layout](./visual/keyboard-layout-editor/Kasner-Ru-Ru-104-ANSI/kasner-ru(ru)-2026.png)
 
 Ukrainian - UK/UA
 
-![Ukrainian ANSI Layout](./visualizations/keyboard-layout-editor/Kasner-Uk-Ua-104-ANSI/kasner-uk(ua)-2026.png)
+![Ukrainian ANSI Layout](./visual/keyboard-layout-editor/Kasner-Uk-Ua-104-ANSI/kasner-uk(ua)-2026.png)
 
 ### Alice
 
 English EN/US - Keychron Q14 Max
 
-![English Alice Layout](./visualizations/keyboard-layout-editor/Kasner-En-Us-Keychron-Q14/kasner-en(us)-alice-keychron-q14.png)
+![English Alice Layout](./visual/keyboard-layout-editor/Kasner-En-Us-Keychron-Q14/kasner-en(us)-alice-keychron-q14.png)
 
 ## Installation
 
