@@ -33,7 +33,7 @@ Run these commands as `root`:
 
    ```bash
       apt update
-      apt install -y wget console-setup
+      apt install -y wget
    ```
 
 2. **Download the compiled `kasner.kmap` file directly to the system config folder:**
@@ -84,7 +84,7 @@ If you prefer to see exactly what is changing in your system, run these commands
 
    ```bash
       apt update
-      apt install -y wget console-setup keyboard-configuration xkb-data
+      apt install -y wget
    ```
 
 2. **Download the XKB layout file:**

@@ -40,4 +40,4 @@ echo "Applying configuration and updating initramfs..."
 setupcon
 update-initramfs -u
 
-echo "Done! The custom kasner.kmap layout has been applied system-wide."
+echo "Done! The kasner layout has been applied system-wide."

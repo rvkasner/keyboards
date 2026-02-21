@@ -37,4 +37,4 @@ echo "Applying configuration and updating initramfs..."
 setupcon
 update-initramfs -u
 
-echo "Done! The custom XKB layout has been compiled and applied system-wide."
+echo "Done! The kasner XKB layout has been compiled and applied system-wide."
