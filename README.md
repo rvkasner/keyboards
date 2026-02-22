@@ -1,12 +1,20 @@
 # Kasner Keyboard Layout
 
-![Version: 3.0](https://img.shields.io/badge/Version-3.0-blue)
+![Version: 3.0](https://img.shields.io/badge/Version-3.0%20(2026)-blue) 
 
-*` Documentation, configs and programming code were created using AI. `*
+**Versions History**: 
+
+![Version: 1.0](https://img.shields.io/badge/Version-1.0%20(2009)-red) 
+![Version: 1.1](https://img.shields.io/badge/Version-1.1%20(2010)-orange) 
+![Version: 2.0](https://img.shields.io/badge/Version-2.0%20(2019)-green) 
+
+*`Roman Kasner 2009-2026`*
+
+> ⚠️ Instructions, configs and scripts were created by AI.
 
 Kasner is a unified, polyglot-first keyboard layout designed for programmers and writers who work extensively with multiple languages (English, Russian, Ukrainian).
 
-It solves the fundamental problem of standard layouts: inconsistent symbol placement.
+It solves the problem of standard layouts: inconsistent symbol placement.
 
 ## The Problem
 
@@ -85,5 +93,3 @@ Full support via XKB (X11 & Wayland).
 ### License
 
 Distributed under the **MIT License**. See [LICENSE](./LICENSE) for more information.
-
-*`Roman Kasner © 2011-2026`*
