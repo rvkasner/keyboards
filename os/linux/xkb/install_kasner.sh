@@ -178,8 +178,8 @@ gnome_add_sources() {
   local merged
   merged="$(python3 - <<PY
 import ast
-current = ast.literal_eval("""${current}""")
-kasner = ast.literal_eval("""${kasner_sources}""")
+current = ast.literal_eval(r"""${current}""")
+kasner = ast.literal_eval(r"""${kasner_sources}""")
 
 out = list(current)
 for item in kasner:
@@ -201,10 +201,10 @@ gnome_remove_sources() {
   current="$(gsettings_get_sources)" || die "Failed to read GNOME input sources via gsettings"
 
   local cleaned
-  cleaned="$(python3 - <<'PY'
+  cleaned="$(python3 - <<PY
 import ast
 
-current = ast.literal_eval("""${current}""")
+current = ast.literal_eval(r"""${current}""")
 
 def is_kasner(item):
   if not isinstance(item, (list, tuple)) or len(item) != 2:
@@ -258,6 +258,10 @@ install_system_files() {
 
   backup_file_if_needed_root "$rules_xml" "$backup_xml"
   backup_file_if_needed_root "$rules_lst" "$backup_lst"
+
+  # If we fail mid-install (e.g., malformed XML edit), restore original rules.
+  # This makes the script safer to run on fresh systems.
+  trap 'uninstall_system_files "${dest_symbols}" "${rules_xml}" "${rules_lst}" 0 || true' ERR
 
   # Register layouts in rules XML/LST.
   # This repo's XKB symbols file must define these variants:
@@ -314,22 +318,31 @@ XML
     log "XKB rules XML already contains kasner layout; skipping XML edit."
   else
     log "Registering kasner in: $rules_xml"
-    as_root python3 - "$rules_xml" <<PY
+    # Write to a temporary file first, then atomically replace the destination.
+    # This reduces the chance of leaving a partially-written XML on interruption.
+    local tmp_xml
+    tmp_xml="$(mktemp)"
+
+    as_root python3 - "$rules_xml" "$tmp_xml" <<PY
 import sys
 from pathlib import Path
 
-path = Path(sys.argv[1])
-data = path.read_text(encoding='utf-8', errors='replace')
+src = Path(sys.argv[1])
+dst = Path(sys.argv[2])
+data = src.read_text(encoding='utf-8', errors='replace')
 
 needle = "</layoutList>"
 idx = data.rfind(needle)
 if idx == -1:
   raise SystemExit("Could not find </layoutList> in rules xml")
 
-block = "\n" + ${xml_block!r} + "\n"
+block = "\n" + r"""${xml_block}""" + "\n"
 data = data[:idx] + block + data[idx:]
-path.write_text(data, encoding='utf-8')
+dst.write_text(data, encoding='utf-8')
 PY
+
+    as_root install -m 0644 "$tmp_xml" "$rules_xml"
+    rm -f "$tmp_xml" || true
   fi
 
   # Best-effort evdev.lst registration.
@@ -337,12 +350,17 @@ PY
     log "XKB rules list already contains kasner; skipping LST edit."
   else
     log "Registering kasner in: $rules_lst"
-    as_root python3 - "$rules_lst" <<'PY'
+    # Write to a temporary file first, then atomically replace the destination.
+    local tmp_lst
+    tmp_lst="$(mktemp)"
+
+    as_root python3 - "$rules_lst" "$tmp_lst" <<'PY'
 import sys
 from pathlib import Path
 
-path = Path(sys.argv[1])
-lines = path.read_text(encoding='utf-8', errors='replace').splitlines(True)
+src = Path(sys.argv[1])
+dst = Path(sys.argv[2])
+lines = src.read_text(encoding='utf-8', errors='replace').splitlines(True)
 
 out = []
 inserted = False
@@ -363,12 +381,18 @@ if in_layout and not inserted:
   out.append('  kasner          Kasner\n')
   inserted = True
 
-path.write_text(''.join(out), encoding='utf-8')
+dst.write_text(''.join(out), encoding='utf-8')
 PY
+
+    as_root install -m 0644 "$tmp_lst" "$rules_lst"
+    rm -f "$tmp_lst" || true
   fi
 
   log "Clearing XKB cache: /var/lib/xkb/*.xkm"
   as_root rm -rf /var/lib/xkb/*.xkm || true
+
+  # Clear rollback trap on success.
+  trap - ERR
 }
 
 uninstall_system_files() {
@@ -532,4 +556,3 @@ else
 fi
 
 log "Done!"
-
