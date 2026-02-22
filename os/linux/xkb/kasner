@@ -143,6 +143,15 @@ xkb_symbols "kasner" {
     // key <KPDL> { [ KP_Decimal, KP_Delete ] };
 };
 
+// English variant (explicit), so desktops can reference kasner(en)
+// and render the layout preview correctly.
+partial alphanumeric_keys modifier_keys
+xkb_symbols "en" {
+
+    include "kasner(kasner)"
+    name[Group1]= "Kasner En";
+};
+
 // ------------------------------------------------------------
 // Kasner Cyrillic variants
 //

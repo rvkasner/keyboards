@@ -135,9 +135,9 @@ import sys
 layouts = "${layouts}".split(',')
 
 mapping = {
-  'en': ('xkb', 'kasner+kasner(en)'),
-  'ru': ('xkb', 'kasner+kasner(ru)'),
-  'uk': ('xkb', 'kasner+kasner(uk)'),
+  'en': ('xkb', 'kasner+en'),
+  'ru': ('xkb', 'kasner+ru'),
+  'uk': ('xkb', 'kasner+uk'),
 }
 
 out = []
