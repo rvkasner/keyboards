@@ -321,7 +321,7 @@ XML
     # Write to a temporary file first, then atomically replace the destination.
     # This reduces the chance of leaving a partially-written XML on interruption.
     local tmp_xml
-    tmp_xml="$(mktemp)"
+    tmp_xml="$(as_root mktemp)"
 
     as_root python3 - "$rules_xml" "$tmp_xml" <<PY
 import sys
@@ -342,7 +342,7 @@ dst.write_text(data, encoding='utf-8')
 PY
 
     as_root install -m 0644 "$tmp_xml" "$rules_xml"
-    rm -f "$tmp_xml" || true
+    as_root rm -f "$tmp_xml" || true
   fi
 
   # Best-effort evdev.lst registration.
@@ -352,7 +352,7 @@ PY
     log "Registering kasner in: $rules_lst"
     # Write to a temporary file first, then atomically replace the destination.
     local tmp_lst
-    tmp_lst="$(mktemp)"
+    tmp_lst="$(as_root mktemp)"
 
     as_root python3 - "$rules_lst" "$tmp_lst" <<'PY'
 import sys
@@ -385,7 +385,7 @@ dst.write_text(''.join(out), encoding='utf-8')
 PY
 
     as_root install -m 0644 "$tmp_lst" "$rules_lst"
-    rm -f "$tmp_lst" || true
+    as_root rm -f "$tmp_lst" || true
   fi
 
   log "Clearing XKB cache: /var/lib/xkb/*.xkm"
