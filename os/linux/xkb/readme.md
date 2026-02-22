@@ -105,14 +105,42 @@ If you prefer to understand every change made to your system or need to debug th
 
     ```xml
     <layout>
-        <configItem>
-            <name>kasner</name>
-            <shortDescription>kas</shortDescription>
-            <description>English (Kasner)</description>
-            <languageList>
-                <iso639Id>eng</iso639Id>
-            </languageList>
-        </configItem>
+      <configItem>
+        <name>kasner</name>
+        <shortDescription>kas</shortDescription>
+        <description>Kasner</description>
+        <languageList>
+          <iso639Id>eng</iso639Id>
+          <iso639Id>rus</iso639Id>
+          <iso639Id>ukr</iso639Id>
+        </languageList>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>en</name>
+            <shortDescription>ken</shortDescription>
+            <description>Kasner En</description>
+            <languageList><iso639Id>eng</iso639Id></languageList>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>ru</name>
+            <shortDescription>kru</shortDescription>
+            <description>Kasner Ru</description>
+            <languageList><iso639Id>rus</iso639Id></languageList>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>uk</name>
+            <shortDescription>kuk</shortDescription>
+            <description>Kasner Uk</description>
+            <languageList><iso639Id>ukr</iso639Id></languageList>
+          </configItem>
+        </variant>
+      </variantList>
     </layout>
     ```
 
