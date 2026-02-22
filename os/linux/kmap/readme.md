@@ -20,10 +20,18 @@ The compiled keyboard layout `kasner.kmap` file hosted in this repository. This 
 Run the following commands as the `root` user:
 
 ```bash
-   wget -O install_kmap.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kmap.sh
-   chmod +x install_kmap.sh
-   ./install_kmap.sh
+   wget -O install_kasner.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kasner.sh
+   chmod +x install_kasner.sh
+   less install_kasner.sh
+   sudo ./install_kasner.sh --method kmap
 ```
+
+Safety tips:
+
+- Prefer `less install_kasner.sh` before running it as `root`.
+- Consider pinning the download URL to a specific commit SHA once the layout is stable.
+- To revert changes (best-effort): `sudo ./install_kasner.sh --uninstall`
+- To revert and remove installed files: `sudo ./install_kasner.sh --uninstall --purge`
 
 ### Option B: Manual installation the keyboard layout in kmap formant
 
@@ -71,10 +79,18 @@ You can install the XKB layout completely automatically using the provided bash 
 Run the following commands as the `root` user:
 
 ```bash
-   wget -O install_xkb.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_xkb.sh
-   chmod +x install_xkb.sh
-   ./install_xkb.sh
+   wget -O install_kasner.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kasner.sh
+   chmod +x install_kasner.sh
+   less install_kasner.sh
+   sudo ./install_kasner.sh --method xkb
 ```
+
+Safety tips:
+
+- Prefer `less install_kasner.sh` before running it as `root`.
+- Consider pinning the download URL to a specific commit SHA once the layout is stable.
+- To revert changes (best-effort): `sudo ./install_kasner.sh --uninstall`
+- To revert and remove installed files: `sudo ./install_kasner.sh --uninstall --purge`
 
 ### Option B: Manual installation the keyboard layout in xkb formant
 
