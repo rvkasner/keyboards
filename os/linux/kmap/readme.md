@@ -21,17 +21,18 @@ Run the following commands as the `root` user:
 
 ```bash
    wget -O install_kasner.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kasner.sh
-   chmod +x install_kasner.sh
    less install_kasner.sh
+   chmod +x install_kasner.sh
+   ./install_kasner.sh --help
    sudo ./install_kasner.sh --method kmap
 ```
 
 Safety tips:
 
 - Prefer `less install_kasner.sh` before running it as `root`.
-- Consider pinning the download URL to a specific commit SHA once the layout is stable.
 - To revert changes (best-effort): `sudo ./install_kasner.sh --uninstall`
 - To revert and remove installed files: `sudo ./install_kasner.sh --uninstall --purge`
+- Consider pinning the download URL to a specific commit SHA once the layout is stable.
 
 ### Option B: Manual installation the keyboard layout in kmap formant
 
@@ -80,17 +81,18 @@ Run the following commands as the `root` user:
 
 ```bash
    wget -O install_kasner.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kasner.sh
-   chmod +x install_kasner.sh
    less install_kasner.sh
+   chmod +x install_kasner.sh
+   ./install_kasner.sh --help
    sudo ./install_kasner.sh --method xkb
 ```
 
 Safety tips:
 
 - Prefer `less install_kasner.sh` before running it as `root`.
-- Consider pinning the download URL to a specific commit SHA once the layout is stable.
 - To revert changes (best-effort): `sudo ./install_kasner.sh --uninstall`
 - To revert and remove installed files: `sudo ./install_kasner.sh --uninstall --purge`
+- Consider pinning the download URL to a specific commit SHA once the layout is stable.
 
 ### Option B: Manual installation the keyboard layout in xkb formant
 
