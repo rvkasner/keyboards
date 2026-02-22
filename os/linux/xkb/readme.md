@@ -12,6 +12,65 @@ This directory contains the Kasner keyboard layout implementation for Linux syst
 
 You can install this layout manually or use the provided shell commands for a quick setup. Both methods achieve the same result: copying the symbol file to the system directory and registering it in the X11 configuration rules so it appears in your GUI settings.
 
+### Install via Script (Recommended)
+
+This repository includes an installer that:
+
+- Installs the XKB symbols file system-wide.
+- Registers the `kasner` layout and its variants in `evdev.xml` / `evdev.lst`.
+- Clears the XKB cache.
+- For the current (non-root) user, adds **Kasner En / Kasner Ru / Kasner Uk** as new input sources in GNOME (via `gsettings`).
+
+> Note: the script should be run as your normal user (not root). It will ask for `sudo` only when it needs to write to system directories.
+
+#### Download and Run
+
+Download the script directly from GitHub and run it:
+
+```bash
+curl -fsSL -o install_kasner.sh \
+  https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/xkb/install_kasner.sh
+
+# Or with wget:
+wget -qO install_kasner.sh \
+  https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/xkb/install_kasner.sh
+
+chmod +x install_kasner.sh
+
+# Install default layouts (en,ru)
+./install_kasner.sh
+```
+
+Enable a specific set of layouts:
+
+```bash
+# Install only Kasner En
+./install_kasner.sh --layouts en
+
+# Install Kasner En + Kasner Ru
+./install_kasner.sh --layouts en,ru
+
+# Install Kasner En + Kasner Ru + Kasner Uk
+./install_kasner.sh --layouts en,ru,uk
+```
+
+Dry-run (print actions without changing anything):
+
+```bash
+./install_kasner.sh --dry-run
+```
+
+Uninstall:
+
+```bash
+./install_kasner.sh --uninstall
+
+# With purge: also removes installed symbols file and backups
+./install_kasner.sh --uninstall --purge
+```
+
+After running the script, a **logout/login** may be required (especially on Wayland) for the desktop environment to reload XKB rules.
+
 ### Prerequisites
 
 - Root (`sudo`) access to write to system directories.

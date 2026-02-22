@@ -20,10 +20,17 @@ The compiled keyboard layout `kasner.kmap` file hosted in this repository. This 
 Run the following commands as the `root` user:
 
 ```bash
+   # Download script
+   curl -fsSL -o install_kasner.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kasner.sh
+   # or
    wget -O install_kasner.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kasner.sh
+
+   # Review and see options
    less install_kasner.sh
    chmod +x install_kasner.sh
    ./install_kasner.sh --help
+
+   # Run to install 
    sudo ./install_kasner.sh --method kmap
 ```
 
@@ -80,10 +87,17 @@ You can install the XKB layout completely automatically using the provided bash 
 Run the following commands as the `root` user:
 
 ```bash
+   # Download script
+   curl -fsSL -o install_kasner.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kasner.sh
+   # or
    wget -O install_kasner.sh https://raw.githubusercontent.com/rvkasner/keyboards/main/os/linux/kmap/install_kasner.sh
+
+   # Review and see options
    less install_kasner.sh
    chmod +x install_kasner.sh
    ./install_kasner.sh --help
+
+   # Run to install
    sudo ./install_kasner.sh --method xkb
 ```
 
