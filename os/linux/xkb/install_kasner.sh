@@ -291,6 +291,7 @@ install_system_files() {
         <variant>
           <configItem>
             <name>en</name>
+            <shortDescription>ken</shortDescription>
             <description>Kasner En</description>
             <languageList><iso639Id>eng</iso639Id></languageList>
           </configItem>
@@ -298,6 +299,7 @@ install_system_files() {
         <variant>
           <configItem>
             <name>ru</name>
+            <shortDescription>kru</shortDescription>
             <description>Kasner Ru</description>
             <languageList><iso639Id>rus</iso639Id></languageList>
           </configItem>
@@ -305,6 +307,7 @@ install_system_files() {
         <variant>
           <configItem>
             <name>uk</name>
+            <shortDescription>kuk</shortDescription>
             <description>Kasner Uk</description>
             <languageList><iso639Id>ukr</iso639Id></languageList>
           </configItem>
