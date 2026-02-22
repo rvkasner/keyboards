@@ -558,4 +558,4 @@ else
   log "You can add layouts via your DE settings or test with: setxkbmap -layout kasner"
 fi
 
-log "Done!"
+log "Done! Please restart."
