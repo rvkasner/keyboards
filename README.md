@@ -84,7 +84,7 @@ Full support via XKB (X11 & Wayland).
 
 ### Windows
 
-- **Setup:** *To be done*
+- **Setup:** [Installation Guide for Windows](./os/windows/readme.md)
 
 - **Supported:**  via Microsoft Keyboard Layout Creator (MSKLC).
 
